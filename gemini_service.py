@@ -12,8 +12,8 @@ client = genai.Client(
     
 )
 
-print(client)
-print(os.environ["GEMINI_API_KEY"])
+# print(client)
+# print(os.environ["GEMINI_API_KEY"])
 
 
 
