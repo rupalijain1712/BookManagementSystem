@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>AI Recommendation</title>
+
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>AI Book Recommendation</h1>
+
+<form method="POST">
+
+<input type="text"
+       name="interest"
+       placeholder="Python, AI, Data Science, Java..."
+       required>
+
+<button type="submit">
+Get Recommendations
+</button>
+
+</form>
+
+{% if recommendation %}
+
+<hr>
+
+<h2>Recommended Books</h2>
+
+<pre class="ai-output">
+{{ recommendation }}
+</pre>
+
+{% endif %}
+
+<br>
+
+<a href="/" class="menu-btn">
+Back Home
+</a>
+
+</div>
+
+<footer class="footer">
+    &copy; www.anudip.org | All Rights Reserved
+</footer>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Update Book</title>
+
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Update Book</h1>
+
+<form method="POST">
+
+<input type="number"
+       name="id"
+       placeholder="Book ID"
+       required>
+
+<input type="text"
+       name="title"
+       placeholder="New Title"
+       required>
+
+<input type="text"
+       name="author"
+       placeholder="New Author"
+       required>
+
+<input type="text"
+       name="category"
+       placeholder="New Category">
+
+<input type="number"
+       step="0.01"
+       name="price"
+       placeholder="New Price">
+
+<button type="submit">
+Update Book
+</button>
+
+</form>
+
+<br>
+
+<a href="/" class="menu-btn">
+Back Home
+</a>
+
+</div>
+<footer class="footer">
+    &copy; www.anudip.org | All Rights Reserved
+</footer>
+</body>
+
+</html>

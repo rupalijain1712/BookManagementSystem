@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Search Book</title>
+
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Search Book</h1>
+
+<form method="POST">
+
+<input type="number"
+       name="id"
+       placeholder="Enter Book ID"
+       required>
+
+<button type="submit">
+Search
+</button>
+
+</form>
+
+{% if book %}
+
+<hr>
+
+<h3>Book Found</h3>
+
+<p><b>ID:</b> {{ book[0] }}</p>
+
+<p><b>Title:</b> {{ book[1] }}</p>
+
+<p><b>Author:</b> {{ book[2] }}</p>
+
+<p><b>Category:</b> {{ book[3] }}</p>
+
+<p><b>Price:</b> {{ book[4] }}</p>
+
+{% endif %}
+
+<br>
+
+<a href="/" class="menu-btn">
+Back Home
+</a>
+
+</div>
+<footer class="footer">
+    &copy; www.anudip.org | All Rights Reserved
+</footer>
+</body>
+</html>
