@@ -1,62 +1,85 @@
 <!DOCTYPE html>
 <html>
-<head>
+              
+       <head>
+              <title>Update Book</title>
 
-<title>Update Book</title>
+              <link rel="stylesheet"
+              href="{{ url_for('static', filename='style.css') }}">
+       </head>
 
-<link rel="stylesheet"
-      href="{{ url_for('static', filename='style.css') }}">
+       <body>
 
-</head>
+              <nav class="navbar">
+                     <div class="nav-brand">
+                            <img src="https://media.licdn.com/dms/image/v2/D560BAQEHjEFxVR5xuw/company-logo_200_200/B56Z1mStfDHoAI-/0/1775537675219?e=2147483647&v=beta&t=GtWsI8qY5ZNdaVx1h6QCo8TTsH4VkOEgyCH3mkutd10" alt="Logo" class="nav-logo">
+                            <h2 class="nav-title">📚 AI Powered Book Management System</h2>
+                     </div>
+    
+                     <div class="nav-links">
+                            <a href="/" class="nav-item home-highlight">🏠 Home</a>
+                            <a href="/add" class="nav-item">➕ Add</a>
+                            <a href="/view" class="nav-item">👁️ View</a>
+                            <a href="/search" class="nav-item">🔍 Search</a>
+                            <a href="/update" class="nav-item">✏️ Update</a>
+                            <a href="/delete" class="nav-item">🗑️ Delete</a>
+                            <a href="/recommend" class="nav-item">🤖 AI Recommend</a>
+                     </div>
+              </nav>
 
-<body>
+              <div class="container">
 
-<div class="container">
+                     <h1>Update Book</h1>
 
-<h1>Update Book</h1>
+                     <form method="POST">
 
-<form method="POST">
+                            <input type="number"
+                                   name="id"
+                                   placeholder="Book ID"
+                                   required
+                            >
 
-<input type="number"
-       name="id"
-       placeholder="Book ID"
-       required>
+                            <input type="text"
+                                   name="title"
+                                   placeholder="New Title"
+                                   required
+                            >
 
-<input type="text"
-       name="title"
-       placeholder="New Title"
-       required>
+                            <input type="text"
+                                   name="author"
+                                   placeholder="New Author"
+                                   required
+                            >
 
-<input type="text"
-       name="author"
-       placeholder="New Author"
-       required>
+                            <input type="text"
+                                   name="category"
+                                   placeholder="New Category"
+                            >
 
-<input type="text"
-       name="category"
-       placeholder="New Category">
+                            <input type="number"
+                                   step="0.01"
+                                   name="price"
+                                   placeholder="New Price"
+                            >
 
-<input type="number"
-       step="0.01"
-       name="price"
-       placeholder="New Price">
+                            <button type="submit">
+                            Update Book
+                            </button>
 
-<button type="submit">
-Update Book
-</button>
+                     </form>
 
-</form>
+                     <br>
 
-<br>
+                     <a href="/" class="menu-btn">
+                     Back Home
+                     </a>
 
-<a href="/" class="menu-btn">
-Back Home
-</a>
+              </div>
 
-</div>
-<footer class="footer">
-    &copy; www.anudip.org | All Rights Reserved
-</footer>
-</body>
+              <footer class="footer">
+                     &copy; <a href="https://anudip.org/" target="_blank">www.anudip.org</a> | All Rights Reserved 
+              </footer>
+
+       </body>
 
 </html>

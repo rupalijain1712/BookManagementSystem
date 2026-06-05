@@ -1,55 +1,72 @@
 <!DOCTYPE html>
 <html>
-<head>
+    <head>
+        <title>View Books</title>
 
-<title>View Books</title>
+        <link rel="stylesheet"
+            href="{{ url_for('static', filename='style.css') }}"
+        >
+    </head>
 
-<link rel="stylesheet"
-      href="{{ url_for('static', filename='style.css') }}">
+    <body>
 
-</head>
+        <nav class="navbar">
+            <div class="nav-brand">
+                <img src="https://media.licdn.com/dms/image/v2/D560BAQEHjEFxVR5xuw/company-logo_200_200/B56Z1mStfDHoAI-/0/1775537675219?e=2147483647&v=beta&t=GtWsI8qY5ZNdaVx1h6QCo8TTsH4VkOEgyCH3mkutd10" alt="Logo" class="nav-logo">
+                    <h2 class="nav-title">📚 AI Powered Book Management System</h2>
+            </div>
+    
+            <div class="nav-links">
+                <a href="/" class="nav-item home-highlight">🏠 Home</a>
+                <a href="/add" class="nav-item">➕ Add</a>
+                <a href="/view" class="nav-item">👁️ View</a>
+                <a href="/search" class="nav-item">🔍 Search</a>
+                <a href="/update" class="nav-item">✏️ Update</a>
+                <a href="/delete" class="nav-item">🗑️ Delete</a>
+                <a href="/recommend" class="nav-item">🤖 AI Recommend</a>
+            </div>
+        </nav>
 
-<body>
+        <div class="container">
 
-<div class="container">
+            <h1>Book List</h1>
 
-<h1>Book List</h1>
+            <table>
 
-<table>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                </tr>
 
-<tr>
-    <th>ID</th>
-    <th>Title</th>
-    <th>Author</th>
-    <th>Category</th>
-    <th>Price</th>
-</tr>
+                {% for book in books %}
 
-{% for book in books %}
+                <tr>
+                    <td>{{ book[0] }}</td>
+                    <td>{{ book[1] }}</td>
+                    <td>{{ book[2] }}</td>
+                    <td>{{ book[3] }}</td>
+                    <td>{{ book[4] }}</td>
+                </tr>
 
-<tr>
+                {% endfor %}
 
-<td>{{ book[0] }}</td>
-<td>{{ book[1] }}</td>
-<td>{{ book[2] }}</td>
-<td>{{ book[3] }}</td>
-<td>{{ book[4] }}</td>
+            </table>
 
-</tr>
+            <br>
 
-{% endfor %}
+            <a href="/" class="menu-btn">
+            Back Home
+            </a>
 
-</table>
+        </div>
 
-<br>
+        <footer class="footer">
+            &copy; <a href="https://anudip.org/" target="_blank">www.anudip.org</a> | All Rights Reserved 
+        </footer>
 
-<a href="/" class="menu-btn">
-Back Home
-</a>
-
-</div>
-<footer class="footer">
-    &copy; www.anudip.org | All Rights Reserved
-</footer>
-</body>
+    </body>
+    
 </html>

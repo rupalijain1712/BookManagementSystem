@@ -1,52 +1,66 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>AI Book Management System</title>
+    <head> 
+        <title>AI Book Management System</title>
+            <!-- Requirement of title? -->
 
-    <link rel="stylesheet"
-          href="{{ url_for('static', filename='style.css') }}">
-</head>
+        <link rel="stylesheet"
+            href="{{ url_for('static', filename='style.css') }}"
+        >
+    </head>
 
+    <body>
 
+        <nav class="navbar">
+            <div class="nav-brand">
+                <img src="https://media.licdn.com/dms/image/v2/D560BAQEHjEFxVR5xuw/company-logo_200_200/B56Z1mStfDHoAI-/0/1775537675219?e=2147483647&v=beta&t=GtWsI8qY5ZNdaVx1h6QCo8TTsH4VkOEgyCH3mkutd10" alt="Logo" class="nav-logo">
+                    <h2 class="nav-title">📚 AI Powered Book Management System</h2>
+            </div>
+    
+            <div class="nav-links">
+                <a href="/" class="nav-item home-highlight">🏠 Home</a>
+                <a href="/add" class="nav-item">➕ Add</a>
+                <a href="/view" class="nav-item">👁️ View</a>
+                <a href="/search" class="nav-item">🔍 Search</a>
+                <a href="/update" class="nav-item">✏️ Update</a>
+                <a href="/delete" class="nav-item">🗑️ Delete</a>
+                <a href="/recommend" class="nav-item">🤖 AI Recommend</a>
+            </div>
+        </nav>
 
+        <div class="container">
 
+            <h1>Home🏷All Operations</h1>
 
+            <a href="/add" class="menu-btn">
+                ➕ Add Book
+            </a>
 
+            <a href="/view" class="menu-btn">
+                👁️ View Books
+            </a>
 
-<body>
+            <a href="/search" class="menu-btn">
+                🔍 Search Book
+            </a>
 
-<div class="container">
+            <a href="/update" class="menu-btn">
+                ✏️ Update Book
+            </a>
 
-    <h1>📚 AI Powered Book Management System</h1>
+            <a href="/delete" class="menu-btn">
+                🗑️ Delete Book
+            </a>
 
-    <a href="/add" class="menu-btn">
-        ➕ Add Book
-    </a>
+            <a href="/recommend" class="menu-btn">
+                🤖 AI Book Recommendation
+            </a>
 
-    <a href="/view" class="menu-btn">
-        👁️ View Books
-    </a>
+        </div>
 
-    <a href="/search" class="menu-btn">
-        🔍 Search Book
-    </a>
+        <footer class="footer">
+            &copy; <a href="https://anudip.org/" target="_blank">www.anudip.org</a> | All Rights Reserved 
+        </footer>
 
-    <a href="/update" class="menu-btn">
-        ✏️ Update Book
-    </a>
-
-    <a href="/delete" class="menu-btn">
-        🗑️ Delete Book
-    </a>
-
-    <a href="/recommend" class="menu-btn">
-        🤖 AI Book Recommendation
-    </a>
-
-</div>
-
-<footer class="footer">
-    &copy; www.anudip.org | All Rights Reserved 
-</footer>
-</body>
+    </body>
 </html>

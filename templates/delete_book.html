@@ -1,42 +1,64 @@
 <!DOCTYPE html>
 <html>
-<head>
 
-<title>Delete Book</title>
 
-<link rel="stylesheet"
-      href="{{ url_for('static', filename='style.css') }}">
+    <head>
+        <title>Delete Book</title>
 
-</head>
+        <link rel="stylesheet"
+            href="{{ url_for('static', filename='style.css') }}"
+        >
+    </head>
 
-<body>
+    <body>
 
-<div class="container">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <img src="https://media.licdn.com/dms/image/v2/D560BAQEHjEFxVR5xuw/company-logo_200_200/B56Z1mStfDHoAI-/0/1775537675219?e=2147483647&v=beta&t=GtWsI8qY5ZNdaVx1h6QCo8TTsH4VkOEgyCH3mkutd10" alt="Logo" class="nav-logo">
+                    <h2 class="nav-title">📚 AI Powered Book Management System</h2>
+            </div>
+    
+            <div class="nav-links">
+                <a href="/" class="nav-item home-highlight">🏠 Home</a>
+                <a href="/add" class="nav-item">➕ Add</a>
+                <a href="/view" class="nav-item">👁️ View</a>
+                <a href="/search" class="nav-item">🔍 Search</a>
+                <a href="/update" class="nav-item">✏️ Update</a>
+                <a href="/delete" class="nav-item">🗑️ Delete</a>
+                <a href="/recommend" class="nav-item">🤖 AI Recommend</a>
+            </div>
+        </nav>
 
-<h1>Delete Book</h1>
+        <div class="container">
 
-<form method="POST">
+            <h1>Delete Book</h1>
 
-<input type="number"
-       name="id"
-       placeholder="Book ID"
-       required>
+            <form method="POST">
 
-<button type="submit">
-Delete Book
-</button>
+            <input type="number"
+                name="id"
+                placeholder="Book ID"
+                required
+            >
 
-</form>
+            <button type="submit">
+                Delete Book
+            </button>
 
-<br>
+            </form>
 
-<a href="/" class="menu-btn">
-Back Home
-</a>
+            <br>
 
-</div>
-<footer class="footer">
-    &copy; www.anudip.org | All Rights Reserved
-</footer>
-</body>
+            <a href="/" class="menu-btn">
+            Back Home
+            </a>
+
+        </div>
+
+        <footer class="footer">
+            &copy; <a href="https://anudip.org/" target="_blank">www.anudip.org</a> | All Rights Reserved 
+        </footer>
+        
+    </body>
+
 </html>
