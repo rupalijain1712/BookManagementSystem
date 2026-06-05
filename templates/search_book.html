@@ -61,11 +61,13 @@
 
             <p><b>Category:</b> {{ book[3] }}</p>
 
-            <p><b>Price:</b> {{ book[4] }}</p>
+            <p><b>Created At:</b> {{ book[4] }}</p>
 
-            {% elif searched %}
+            <p><b>Updated At:</b> {{ book[5] }}</p>
+
+            {% elif searched_title %}
             <hr>
-            <h3>No book found with this name.</h3>
+            <h3>No book found with the name "{{ searched_title }}"</h3>
 
             {% endif %}
 

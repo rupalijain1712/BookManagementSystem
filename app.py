@@ -31,7 +31,6 @@ def add():
             request.form["title"],
             request.form["author"],
             request.form["category"],
-            request.form["price"]
         )
 
         return render_template(
@@ -61,16 +60,17 @@ def view():
 def search():
 
     book = None
+    search_query = None
 
     if request.method == "POST":
 
-        book = search_book(
-            request.form["title"]
-        )
+        search_query = request.form["title"]
+        book = search_book(search_query)
 
     return render_template(
         "search_book.html",
-        book=book
+        book=book,
+        searched_title=search_query
     )
 
 
@@ -86,7 +86,6 @@ def update():
             request.form["title"],
             request.form["author"],
             request.form["category"],
-            request.form["price"]
         )
 
         return render_template(

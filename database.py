@@ -1,3 +1,5 @@
+
+
 """
 Database Layer
 All SQLite operations
@@ -35,7 +37,9 @@ def create_tables():
 
         category TEXT,
 
-        price REAL
+        created_at DATETIME DEFAULT (datetime('now', '+5 hours', '+30 minutes')),
+                   
+        updated_at DATETIME DEFAULT (datetime('now', '+5 hours', '+30 minutes'))
     )
     """)
 
@@ -56,17 +60,17 @@ def create_tables():
     conn.close()
 
 
-def add_book(title, author, category, price):
+def add_book(title, author, category):
 
     conn = get_connection()
 
     conn.execute(
         """
         INSERT INTO books
-        (title,author,category,price)
-        VALUES(?,?,?,?)
+        (title,author,category)
+        VALUES(?,?,?)
         """,
-        (title, author, category, price)
+        (title, author, category)
     )
 
     conn.commit()
@@ -93,7 +97,7 @@ def search_book(title):
     conn = get_connection()
 
     cursor = conn.execute(
-        "SELECT * FROM books WHERE title=?",
+        "SELECT * FROM books WHERE title LIKE ?",
         (title,)
     )
 
@@ -108,8 +112,8 @@ def update_book(
         book_id,
         title,
         author,
-        category,
-        price):
+        category
+        ):
 
     conn = get_connection()
 
@@ -119,14 +123,13 @@ def update_book(
         SET title=?,
             author=?,
             category=?,
-            price=?
+            updated_at = datetime('now', '+5 hours', '+30 minutes')
         WHERE id=?
         """,
         (
             title,
             author,
             category,
-            price,
             book_id
         )
     )
