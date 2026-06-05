@@ -65,7 +65,7 @@ def search():
     if request.method == "POST":
 
         book = search_book(
-            request.form["id"]
+            request.form["title"]
         )
 
     return render_template(

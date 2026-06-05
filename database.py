@@ -88,13 +88,13 @@ def get_all_books():
     return books
 
 
-def search_book(book_id):
+def search_book(title):
 
     conn = get_connection()
 
     cursor = conn.execute(
-        "SELECT * FROM books WHERE id=?",
-        (book_id,)
+        "SELECT * FROM books WHERE title=?",
+        (title,)
     )
 
     book = cursor.fetchone()
