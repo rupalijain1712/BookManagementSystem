@@ -132,6 +132,7 @@ button:hover {
   text-decoration: none;
   border-radius: 8px;
   font-weight: bold;
+  cursor: pointer;
   transition: all 0.3s ease;
 }
 
@@ -139,6 +140,17 @@ button:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 15px rgba(79, 70, 229, 0.3);
 }
+
+.warning-box { margin-top: 15px; }
+
+.warning-content { 
+  background: #fef2f2; 
+  padding: 15px; 
+  border: 1px solid #fee2e2; 
+  border-radius: 8px; 
+  margin-top: 10px;
+}
+
 
 table {
   width: 100%;

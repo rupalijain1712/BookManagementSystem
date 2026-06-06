@@ -55,11 +55,28 @@
                                    name="category"
                                    placeholder="New Category"
                             >
-                            
 
-                            <button type="submit">
-                            Update Book
-                            </button>
+
+                            <details class="warning-box">
+                                   <summary class="menu-btn" style="background: #c300ff;">Update Book</summary>
+
+                                   <div class="warning-content">
+                                          <p>⚠️ <b>Warning:</b> Are you sure to Update?</p>
+                                          
+                                          <div style="display: flex; gap: 15px; margin-top: 15px;">
+                                                 
+                                                 <button type="submit" style="background: #dc2626; flex: 1; margin: 0;">
+                                                        Yes, Update
+                                                 </button>
+                                                 
+                                                 <a href="/update" class="menu-btn" style="background: #7998d7; flex: 1; margin: 0; text-decoration: none; line-height: 20px;">
+                                                        No, Don't Update
+                                                 </a>
+                                   
+                                          </div>
+                                   </div>
+
+                            </details>
 
                      </form>
 
