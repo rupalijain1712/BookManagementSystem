@@ -154,6 +154,37 @@ def delete_book(book_id):
     conn.close()
 
 
+def get_page_stats():
+
+    conn = get_connection()
+    cursor = conn.cursor()
+    
+    cursor.execute('''SELECT COUNT(*) FROM books''')
+    total_books = cursor.fetchone()[0]
+    
+    cursor.execute('''SELECT COUNT(DISTINCT category) 
+                   FROM books 
+                   WHERE category IS NOT NULL AND category != '' ''')
+    
+    unique_categories = cursor.fetchone()[0]
+
+    cursor.execute('''SELECT DISTINCT category 
+                   FROM books 
+                   WHERE category IS NOT NULL AND category != '' 
+                   ORDER BY category ASC''')
+    
+    category_list = [row[0] for row in cursor.fetchall()]
+
+    
+    conn.close()
+    
+    return {
+        "total_books": total_books,
+        "unique_categories": unique_categories,
+        "category_list": category_list
+    }
+
+
 def save_recommendation(
         interest,
         ai_response):

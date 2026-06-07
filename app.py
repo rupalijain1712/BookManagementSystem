@@ -14,8 +14,12 @@ create_tables()
 
 @app.route("/")
 def home():
+
+    stats = get_page_stats()
+
     return render_template(
-        "home.html"
+        "home.html",
+        stats=stats
     )
 
 

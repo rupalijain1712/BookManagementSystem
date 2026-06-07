@@ -65,6 +65,139 @@
 
 /* */
 
+/* Dashboard Layout Structural Grid */
+.dashboard-wrapper {
+  display: flex;
+  max-width: 85%;
+  margin: 40px auto;
+  gap: 30px;
+  align-items: stretch; 
+}
+
+/* Left Workspace Box */
+.left-panel {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Right Menu Box (Replaces original centered container setup) */
+.right-panel {
+  flex: 1;
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* Greeting Block */
+.greeting-card {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  border-left: 6px solid #4f46e5;
+}
+
+.greeting-card h2 {
+  margin-top: 0;
+  color: #1e293b;
+  font-size: 24px;
+}
+
+.greeting-card p {
+  color: #64748b;
+  line-height: 1.6;
+  font-size: 15px;
+  margin-bottom: 0;
+}
+
+/* Stats Structure */
+.stats-container {
+  display: flex;
+  gap: 20px;
+}
+
+.stat-card {
+  flex: 1;
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.stat-num {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.stat-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #64748b;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+/* Semantic Accent Highlights */
+.blue-stat .stat-num { color: #4f46e5; }
+.blue-stat { border-bottom: 4px solid #4f46e5; }
+
+.green-stat .stat-num { color: #10b981; }
+.green-stat { border-bottom: 4px solid #10b981; }
+
+
+/* Container box for categories */
+.category-showcase-card {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  flex-grow: 1; 
+}
+
+.category-showcase-card h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #1e293b;
+}
+
+/* Flex wrap container to arrange badges like a cloud cluster */
+.category-badge-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Individual badge styling */
+.category-badge {
+  background: #f1f5f9;
+  color: #475569;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: bold;
+  border: 1px solid #e2e8f0;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Subtle interactive animation when rolling over a category badge */
+.category-badge:hover {
+  background: #eef2ff;
+  color: #4f46e5;
+  border-color: #c7d2fe;
+  transform: translateY(-1px);
+}
+
+/* */
+
 body {
   background: linear-gradient(135deg, #08372d, #f8fafc);
   font-family: Arial, sans-serif;
@@ -139,6 +272,24 @@ button:hover {
 .menu-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 15px rgba(79, 70, 229, 0.3);
+}
+
+.menu-sp {
+  display: inline;
+  text-align: center;
+  padding: 12px 20px;
+  background: linear-gradient(135deg,  #c300ff, #c300ff);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.menu-sp:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(255, 81, 0, 0.3);
 }
 
 .warning-box { margin-top: 15px; }
