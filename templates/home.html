@@ -28,38 +28,57 @@
             </div>
         </nav>
 
-        <div class="container">
+    <div class="dashboard-wrapper">
+    
+        <div class="left-panel">
+            <div class="greeting-card">
+                <h2>Hello, Welcome! 👋</h2>
+                <p>Manage, track, and dynamically update your physical catalog with our AI-integrated environment designed to automate cataloging workflows effortlessly.</p>
+            </div>
+            
+            <div class="stats-container">
+                <div class="stat-card blue-stat">
+                    <span class="stat-num">{{ stats.total_books }}</span>
+                    <span class="stat-label">Total Books</span>
+                </div>
+                
+                <div class="stat-card green-stat">
+                    <span class="stat-num">{{ stats.unique_categories }}</span>
+                    <span class="stat-label">Unique Categories</span>
+                </div>
+            </div>
 
-            <h1>Home🏷All Operations</h1>
-
-            <a href="/add" class="menu-btn">
-                ➕ Add Books
-            </a>
-
-            <a href="/view" class="menu-btn">
-                👁️ View Books
-            </a>
-
-            <a href="/search" class="menu-btn">
-                🔍 Search Book
-            </a>
-
-            <a href="/update" class="menu-btn">
-                ✏️ Update Book
-            </a>
-
-            <a href="/delete" class="menu-btn">
-                🗑️ Delete Book
-            </a>
-
-            <a href="/recommend" class="menu-btn">
-                🤖 AI Book Recommendation
-            </a>
+            <div class="category-showcase-card">
+                <h3>🏷️ Available Book Categories</h3>
+                <div class="category-badge-container">
+                    {% if stats.category_list %}
+                        {% for cat in stats.category_list %}
+                            <span class="category-badge">{{ cat }}</span>
+                        {% endfor %}
+                    {% else %}
+                        <p style="color: #94a3b8; font-style: italic; font-size: 14px; margin: 0;">No categories assigned yet. Add a book with a category to see it here!</p>
+                    {% endif %}
+                </div>
+            </div>
 
         </div>
 
+        <div class="right-panel">
+            <h1>Operations</h1>
+
+            <a href="/add" class="menu-btn">➕ Add Books</a>
+            <a href="/view" class="menu-btn">👁️ View Books</a>
+            <a href="/search" class="menu-btn">🔍 Search Book</a>
+            <a href="/update" class="menu-btn">✏️ Update Book</a>
+            <a href="/delete" class="menu-btn">🗑️ Delete Book</a>
+            <a href="/recommend" class="menu-btn">🤖 AI Book Recommendation</a>
+        </div>
+
+    </div>
+
         <footer class="footer">
             &copy; <a href="https://anudip.org/" target="_blank">www.anudip.org</a> | All Rights Reserved 
+            <br>Devs: Rupali Jain 💠 Sayar Sekhar Ghosh
         </footer>
 
     </body>

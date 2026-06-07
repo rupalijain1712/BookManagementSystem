@@ -31,10 +31,17 @@
 
             <h1>Book List</h1>
 
+            <div style="text-align: center; margin-bottom: 20px;">
+                <span style="background-color: #eef2ff; color: #4f46e5; padding: 6px 16px; border-radius: 20px; font-weight: bold; font-size: 15px; border: 1px solid #c7d2fe; display: inline-block;">
+                    📊 Total Registered Books: {{ books|length }}
+                </span>
+            </div>
+
             <table>
 
                 <tr>
-                    <th>ID</th>
+                    <th>Sl. No.</th>
+                    <!-- <th>ID</th> --> <!-- No need to show this broojken id-->
                     <th>Title</th>
                     <th>Author</th>
                     <th>Category</th>
@@ -45,7 +52,8 @@
                 {% for book in books %}
 
                 <tr>
-                    <td>{{ book[0] }}</td>
+                    <td>{{ loop.index }}</td>
+                    <!-- <td>{{ book[0] }}</td> -->
                     <td>{{ book[1] }}</td>
                     <td>{{ book[2] }}</td>
                     <td>{{ book[3] }}</td>
@@ -67,6 +75,7 @@
 
         <footer class="footer">
             &copy; <a href="https://anudip.org/" target="_blank">www.anudip.org</a> | All Rights Reserved 
+            <br>Devs: Rupali Jain 💠 Sayar Sekhar Ghosh
         </footer>
 
     </body>
