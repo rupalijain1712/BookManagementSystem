@@ -43,6 +43,8 @@ def create_tables():
     )
     """)
 
+    cursor.execute("INSERT OR IGNORE INTO sqlite_sequence (name, seq) VALUES ('books', 100)")
+
     # AI RECOMMENDATION TABLE
 
     cursor.execute("""

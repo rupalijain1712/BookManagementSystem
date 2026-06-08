@@ -3,6 +3,7 @@ Google Gemini Service
 """
 
 from google import genai
+from google.genai import errors #For overload error hanfling
 import os
 
 
@@ -40,9 +41,22 @@ def get_book_recommendation(
     4. Why Recommended
     """
 
-    response = client.models.generate_content(
-        model="gemini-3-flash-preview",
-        contents=prompt
-    )
+    try:
+        response = client.models.generate_content(
+            model="gemini-3-flash-preview",  
+            contents=prompt
+        )
+        return response.text
 
-    return response.text
+    except errors.APIError as e:
+        # Catches server overloads (503), rate limits (429), or internal errors (500)
+        print(f"Gemini API Error occurred: {e}")
+        return (
+            "⚠️ The AI Library Service is currently busy or overloaded. "
+            "Please wait a few moments and click 'Get Recommendations' again!"
+        )
+        
+    except Exception as e:
+        # Catch-all fallback for other sudden issues (e.g., local network loss)
+        print(f"Unexpected system error: {e}")
+        return "⚠️ A system connection issue occurred. Please check your internet connection and retry."

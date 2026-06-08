@@ -52,7 +52,7 @@
             <h2>Recommended Books</h2>
 
             <pre class="ai-output">
-            {{ recommendation }}
+            {{ recommendation | safe}} <!-- To render as html sin tags -->
             </pre>
 
             {% endif %}
