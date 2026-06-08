@@ -6,6 +6,7 @@ from flask import (
 
 from database import *
 from gemini_service import *
+import markdown
 
 app = Flask(__name__)
 
@@ -148,7 +149,7 @@ def recommend():
 
     return render_template(
         "recommend.html",
-        recommendation=recommendation
+        recommendation=markdown.markdown(recommendation)
     )
 
 
